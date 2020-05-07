@@ -49,6 +49,7 @@ in
     crossDeploy ? false,
     fast ? false,
     force ? false,
+    action ? "switch",
     source,
     target
   }: let
@@ -68,7 +69,7 @@ in
         ${build buildTarget'}
       ''}
       ${rebuild ([
-        "switch"
+        action
       ] ++ lib.optionals crossDeploy [
         "--no-build-nix"
       ] ++ lib.optionals (buildTarget' != target') [

@@ -123,12 +123,16 @@ architecture.
 
 ### `fast` (optional, defaults to false)
 
-Run `nixos-rebuild switch` immediately without building the system
+Run `nixos-rebuild` immediately without building the system
 in a dedicated `nix build` step.
 
 ### `force` (optional, defaults to false)
 
 Create the sentinel file (`/var/src/.populate`) before syncing the new source.
+
+### `action` (optional, defaults to `"switch"`)
+
+The action for `nixos-rebuild`.
 
 ## Source Types
 
